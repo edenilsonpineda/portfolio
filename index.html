@@ -12,11 +12,12 @@
     <title>Portfolio</title>
 </head>
 <body style="background-color: #fdfdfd !important;">
+<span id="blankObject"></span>
 <!-- Navigation Bar -->
-    <nav class="uk-margin-small-left uk-margin-small-right uk-visible@m uk-margin-xlarge-left uk-margin-xlarge-right" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+    <nav class="uk-margin-small-left uk-margin-small-right uk-visible@m " uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
     
     <div class="uk-navbar-left">
-        <a href="" class="uk-navbar-item uk-logo"></a>
+        <a id="logo" href="" class="uk-navbar-item uk-logo"></a>
     </div>
     <div class="uk-navbar-right">
 
@@ -32,7 +33,7 @@
 <!-- Navigation Bar Ends  -->
 
 <!-- Navigation Bar Mobile -->
-<nav class="uk-navbar-container uk-margin-small-left uk-margin-small-right uk-hidden@m uk-margin-xlarge-left uk-margin-xlarge-right" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+<nav class="uk-navbar-container uk-hidden@m" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
     
     <div class="uk-navbar-left">
         <a href="" class="uk-navbar-item uk-logo uk-light"></a>
@@ -66,8 +67,8 @@
 
 <!-- Navigation Bar Mobile Ends -->
 <!-- Home -->
-<section class="uk-margin-small-left uk-margin-small-right uk-margin-xlarge-top">
-    <h1 class="uk-margin-xlarge-left uk-text-left">I'm Edenilson <p style="font-size: medium;">(Spelled Edəh-nel-son)</p></h1>
+<section id="nameIntro" class="uk-margin-small-left uk-margin-small-right uk-margin-xlarge-top">
+    <h1 id="nameHeader" class="uk-margin-xlarge-left uk-text-left">I'm Edenilson <p style="font-size: medium;">(Spelled Edəh-nel-son)</p></h1>
     <h1 class="uk-margin-xlarge-left uk-text-left uk-margin-xlarge-right "><br>A <b>Software Developer from El Salvador </b> <img id="sv-flag" src="./images/logos/🇸🇻.svg" width="50" height="50" alt="" srcset=""/> </h1>
     <a href="#about" class="uk-margin-xlarge-left uk-text-capitalize uk-button uk-button-secondary" uk-scroll>About Me</a>
 </section>
@@ -76,10 +77,10 @@
 <br>
 
 
-<hr class="uk-margin-xlarge-top uk-margin-xlarge-left uk-margin-xlarge-right">
+<hr class="uk-margin-large-top uk-margin-xlarge-left uk-margin-xlarge-right">
 
 <!-- About Me -->
-<section id="about" class="uk-margin-small-left uk-margin-small-right uk-margin-xlarge-top uk-margin-xlarge-bottom">
+<section id="about" class="uk-margin-small-left uk-margin-small-right uk-margin-large-top uk-margin-large-bottom">
 <h3 class="uk-margin-xlarge-left"><strong>About Me</strong></h3>
 <!-- Change here to ur paragraph -->
 <div class="uk-margin-xlarge-left uk-margin-xlarge-right">
@@ -98,7 +99,7 @@ from the concept to the delivery and support of the implemented solutions in on-
 <!-- div-->
 <hr class="uk-margin-xlarge-left uk-margin-xlarge-right">
 <!-- Tech Stack Section -->
-<section id="techstack" class="uk-margin-small-left uk-margin-small-right uk-margin-xlarge-top uk-margin-xlarge-bottom">
+<section id="techstack" class="uk-margin-small-left uk-margin-small-right uk-margin-medium-top uk-margin-xlarge-bottom">
 <h3 class="uk-margin-xlarge-left"><strong>Tech stack</strong></h3>
 <div class="uk-margin-xlarge-left uk-margin-xlarge-right" >
     <ul class="uk-grid-match uk-child-width-1-2@s uk-child-width-1-4@m" uk-sortable="handle: .uk-card" uk-grid>
@@ -187,7 +188,7 @@ from the concept to the delivery and support of the implemented solutions in on-
 
 <!-- Projects Section -->
 <hr class="uk-margin-xlarge-left uk-margin-xlarge-right">
-<section id="projects" class="uk-margin-small-left uk-margin-small-right uk-margin-xlarge-top uk-margin-xlarge-bottom">
+<section id="projects" class="uk-margin-small-left uk-margin-small-right uk-margin-medium-top uk-margin-xlarge-bottom">
     <h3 class="uk-margin-xlarge-left "><strong>Projects</strong></h3>
     <p class="uk-margin-xlarge-left">Projects that i've been working on</p>
 
@@ -218,11 +219,26 @@ from the concept to the delivery and support of the implemented solutions in on-
     </div>
     <br>
 
-
+    
 </section>
 <hr class="uk-margin-xlarge-left uk-margin-xlarge-right">
+<a href="#blankObject" id="returnUp" class="uk-button uk-button-secondary" style="display: none; position: fixed; bottom: 20px; right: 30px; z-index: 99;  border: none; outline: none; cursor: pointer;" uk-scroll>
+    <span uk-icon="chevron-up"></span>
+</a>
 </div>
 <!-- Projects Section Ends -->
-<a href="" uk-totop></a>
+
+<script>
+    const returnButton  = document.getElementById("returnUp");
+    window.onscroll = function() { scrollFunction() };
+
+    function scrollFunction() {
+        if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
+            returnButton.style.display = "block";
+        }else{
+            returnButton.style.display = "none";
+        }
+    }
+</script>
 </body>
 </html>
